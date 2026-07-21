@@ -14,6 +14,6 @@ Create a **private GitHub repository** from this folder. In Cloudflare Pages, co
 - Build command: leave empty
 - Build output directory: `/`
 
-The included workflow supports direct deployment after the repository has `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` secrets and a Pages project named `harness-ranger-demo`.
+Cloudflare Pages' Git integration automatically deploys every push to `main` once this repository is connected. This avoids placing a Cloudflare API token in GitHub Actions for a static UI demo.
 
 Do not deploy this demo at the same hostname as the production control plane. Recommended: `harnessranger.heurchain.com` or `demo.heurchain.com/harnessranger`.
