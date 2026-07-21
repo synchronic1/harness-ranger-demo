@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "name": "Harness Ranger HeurChain Bridge",
+  "kind": "agent-integration-instructions",
+  "instructions_url": "/agent-instructions.md",
+  "openai_instructions_url": "/openai-instructions.md",
+  "repository": "https://github.com/synchronic1/enhanced-harness-plugin",
+  "package": "@synchronic1/harness-ranger",
+  "runtime": { "node": ">=20", "module": "ESM" },
+  "integration": {
+    "default_state": "disabled",
+    "service_id": "harness-ranger",
+    "health_path": "/health",
+    "local_broker_template": "http://<LAN-IP>:<PORT>",
+    "hosted_broker_template": "https://api.HeurChain.com",
+    "secret_fields": ["heurchain.apiKey", "heurchain.tenant"],
+    "tools_when_enabled": ["heurchain_store", "heurchain_search"],
+    "event_sinks": ["compaction spill", "tool-error incident", "metrics snapshot"],
+    "failure_policy": "fail-open"
+  },
+  "constraints": [
+    "The static demo is not an API endpoint and must not receive secrets.",
+    "Ask the operator before installing packages, changing configuration, or enabling the bridge.",
+    "Use a local broker only after the operator provides an approved LAN address and port.",
+    "Use a hosted broker only after confirming it implements the required persistence contract."
+  ]
+}

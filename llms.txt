@@ -1,0 +1,11 @@
+# Harness Ranger demo - agent integration index
+
+This static demo documents the Harness Ranger control plane. It is not a live API and must not receive credentials.
+
+- Primary installation and HeurChain bridge guide: /agent-instructions.md
+- OpenAI/Codex operator instructions: /openai-instructions.md
+- Machine-readable manifest: /agent-manifest.json
+- UI feature catalog: /features.html
+- Evaluation methodology paper: /docs/cross-judge-validation-and-multi-track-iteration.pdf
+
+Safety constraints: HeurChain is disabled by default; use host-side secret configuration; never paste API keys into the dashboard; validate /health before enabling memory tools; fail open on broker failure.
