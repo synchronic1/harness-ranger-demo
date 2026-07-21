@@ -1,0 +1,10 @@
+# Assets-only Worker. Do not add a wildcard `route` here: domain routing remains
+# managed by the existing Cloudflare Worker/domain configuration.
+name = "harness-ranger-demo"
+compatibility_date = "2026-07-21"
+workers_dev = true
+
+[assets]
+directory = "."
+html_handling = "auto-trailing-slash"
+not_found_handling = "single-page-application"
